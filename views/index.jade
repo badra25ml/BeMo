@@ -38,6 +38,7 @@ block content
       script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
       script(type='text/javascript', src='rw_common/themes/Endeavor/scripts/html5shiv.js')
     script(type='text/javascript', src='../javascripts/javascript.js')
+    script(type='text/javascript', src='../javascripts/addedFunctions.js')
     script(type='text/javascript', src='../javascripts/jquery-1.7.1.min.js')
     script(type='text/javascript', src='../javascripts/function.js')
     script(type='text/javascript', src='../javascripts/jquery.fitvids.js')
@@ -117,6 +118,11 @@ block content
                     a(href='sample-cda-interview-questions.html', rel='self', style="pointer-events: none; cursor: default;") CDA Interview Questions
                   li
                     a(href='/contact-us', rel='self') Contact Us
+                  li
+                    h1 Change Image
+                    form(action='/change', method='post', enctype='multipart/form-data')
+                     input(type='file', accept='image/*', name='photo')
+                     input(id='change', type='submit', value='change')
         .banner.video_banner
           #feature
             #extraContainer11

@@ -25,11 +25,15 @@ router.get('/change', (req, res) => {
   if (heightString) {
     height = parseInt(heightString)
   }
+
   // Set the content-type of the response
   res.type(`image/${format || 'png'}`)
 
   // Get the resized image
   resize('./public/images/bemo-logo2.png', format, width, height).pipe(res)
-})
+});
+
+
+
 
 module.exports = router;

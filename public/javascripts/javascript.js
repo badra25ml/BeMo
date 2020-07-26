@@ -11,15 +11,15 @@
  */
 
 function externalLinks() {
-if (!document.getElementsByTagName) return; 
-var anchors = document.getElementsByTagName("a"); 
-for (var i=0; i<anchors.length; i++) { 
-var anchor = anchors[i]; 
-if (anchor.getAttribute("href") && 
-anchor.getAttribute("rel") == "external") 
+if (!document.getElementsByTagName) return;
+var anchors = document.getElementsByTagName("a");
+for (var i=0; i<anchors.length; i++) {
+var anchor = anchors[i];
+if (anchor.getAttribute("href") &&
+anchor.getAttribute("rel") == "external")
 anchor.target = "_blank";
-} 
-} 
+}
+}
 window.onload = externalLinks;
 
 
@@ -156,7 +156,7 @@ deconcept.SWFObjectUtil.getPlayerVersion = function(reqVer, xiInstall){
 			}
 		}catch(e){}
 		if (reqVer && PlayerVersion.major > reqVer.major) return PlayerVersion; // version is ok, skip minor detection
-		// this only does the minor rev lookup if the user's major version 
+		// this only does the minor rev lookup if the user's major version
 		// is not 6 or we are checking for a specific minor or revision number
 		// see http://blog.deconcept.com/2006/01/11/getvariable-setvariable-crash-internet-explorer-flash-6/
 		if (!reqVer || ((reqVer.minor != 0 || reqVer.rev != 0) && PlayerVersion.major == reqVer.major) || PlayerVersion.major != 6 || xiInstall) {
@@ -260,8 +260,8 @@ function _QTAddAttribute(prefix, slotName, tagName)
 	if ( null != value )
 	{
 		if ( 0 == slotName.indexOf(prefix) && (null == tagName) )
-			tagName = slotName.substring(prefix.length); 
-		if ( null == tagName ) 
+			tagName = slotName.substring(prefix.length);
+		if ( null == tagName )
 			tagName = slotName;
 		return tagName + '="' + value + '" ';
 	}
@@ -276,7 +276,7 @@ function _QTAddObjectAttr(slotName, tagName)
 		return "";
 
 	if ( 0 == slotName.indexOf("obj#") && (null == tagName) )
-		tagName = slotName.substring(4); 
+		tagName = slotName.substring(4);
 
 	return _QTAddAttribute("obj#", slotName, tagName);
 }
@@ -288,7 +288,7 @@ function _QTAddEmbedAttr(slotName, tagName)
 		return "";
 
 	if ( 0 == slotName.indexOf("emb#") && (null == tagName) )
-		tagName = slotName.substring(4); 
+		tagName = slotName.substring(4);
 
 	return _QTAddAttribute("emb#", slotName, tagName);
 }
@@ -308,8 +308,8 @@ function _QTAddObjectParam(slotName, generateXHTML)
 			paramValue = gTagAttrs[slotName];
 
 		if ( 0 == slotName.indexOf("obj#") )
-			slotName = slotName.substring(4); 
-	
+			slotName = slotName.substring(4);
+
 		if ( null != paramValue )
 			paramStr = '  <param name="' + slotName + '" value="' + paramValue + '"' + endTagChar + '\n';
 	}
@@ -328,7 +328,7 @@ function _QTDeleteTagAttrs()
 	}
 }
 
-		
+
 
 // generate an embed and object tag, return as a string
 function _QTGenerate(callingFcnName, generateXHTML, args)
@@ -339,7 +339,7 @@ function _QTGenerate(callingFcnName, generateXHTML, args)
 		_QTComplain(callingFcnName, gArgCountErr);
 		return "";
 	}
-	
+
 	// allocate an array, fill in the required attributes with fixed place params and defaults
 	gTagAttrs = new Array();
 	gTagAttrs["src"] = args[0];
@@ -365,11 +365,11 @@ function _QTGenerate(callingFcnName, generateXHTML, args)
 		attrValue = args[ndx + 1];
 
 		// "name" and "id" should have the same value, the former goes in the embed and the later goes in
-		//  the object. use one array slot 
+		//  the object. use one array slot
 		if ( "name" == attrName || "id" == attrName )
 			gTagAttrs["name"] = attrValue;
 
-		else 
+		else
 			gTagAttrs[attrName] = attrValue;
 	}
 
@@ -413,7 +413,7 @@ function _QTGenerate(callingFcnName, generateXHTML, args)
 			embedTag += _QTAddEmbedAttr(attrName);
 			objTag += _QTAddObjectParam(attrName, generateXHTML);
 		}
-	} 
+	}
 
 	// end both tags, we're done
 	return objTag + embedTag + '> </em' + 'bed>\n</ob' + 'ject' + '>';
@@ -439,5 +439,3 @@ function QT_WriteOBJECT_XHTML()
 {
 	document.writeln(_QTGenerate("QT_WriteOBJECT_XHTML", true, arguments));
 }
-
-

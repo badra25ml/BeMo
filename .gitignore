@@ -1,3 +1,9 @@
 .DS_Store
-node_modules/
 Developer-functional-test-BeMo.pdf
+# Node build artifacts
+node_modules
+npm-debug.log
+
+# Local development
+*.env
+package-lock.json
