@@ -1,0 +1,12 @@
+ nav li h1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-size: 16px;
+  background: transparent;
+  font-family: arial;
+}
+ul.navigation {
+  margin-left: -90px;
+}

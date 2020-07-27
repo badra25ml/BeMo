@@ -12,6 +12,7 @@ block content
     title
       | FREE Ultimate Guide to CDA Interviews: Tips & Proven Strategies to Help You Prepare & Ace Your CDA Structured Interview.
     link(rel='stylesheet', type='text/css', media='screen', href='../stylesheets/css/styles.css')
+    link(rel='stylesheet', type='text/css', media='screen', href='../stylesheets/css/added.css')
     link(rel='stylesheet', type='text/css', media='screen', href='../stylesheets/css/colourtag-page0.css')
     link(rel='stylesheet', type='text/css', media='screen', href='../stylesheets/css/flexslider.css')
     link(rel='stylesheet', type='text/css', media='screen', href='../stylesheets/css/contentcenter.css')
@@ -111,6 +112,8 @@ block content
               nav
                 ul.navigation
                   li#current
+                    a(href='#', id='switcher') Indexing Off
+                  li#current
                     a#current(href='/', rel='self') Main
                   li
                     a(href='how-to-prepare-for-cda-interview.html', rel='self', style="pointer-events: none; cursor: default;") How To Prepare
@@ -119,10 +122,10 @@ block content
                   li
                     a(href='/contact-us', rel='self') Contact Us
                   li
-                    h1 Change Image
-                    form(action='/change', method='post', enctype='multipart/form-data')
-                     input(type='file', accept='image/*', name='photo')
-                     input(id='change', type='submit', value='change')
+                    a(href='#', rel='self', id='change') Change Picture
+                     //- form(action='/change', method='post', enctype='multipart/form-data')
+                     //-  input(type='file', accept='image/*', name='photo')
+                     //-  input(id='change', type='submit', value='change')
         .banner.video_banner
           #feature
             #extraContainer11
